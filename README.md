@@ -1,1 +1,1 @@
-#[yinjy.github.io](http://yinjy.github.io)
+[yinjy.github.io](http://yinjy.github.io)
