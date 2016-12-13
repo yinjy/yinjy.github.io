@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>增值税计算器</title>
+    
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      html,input {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tax-calc"></div>
+
+    <script src="http://cdn.bootcss.com/react/15.4.1/react.min.js"></script>
+    <script src="http://cdn.bootcss.com/react/15.4.1/react-dom.min.js"></script>
+    <script type="text/javascript">
+      class TaxCalc extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      sale: '',
+      tax: '',
+      sum: '',
+      price: '',
+      num: 1,
+      rate: 0.03
+    };
+  }
+
+  handleChange(e) {
+    var sum = parseFloat(document.getElementById("sum").value)||0;
+    var num = parseFloat(document.getElementById("num").value)||0;
+    var rate = parseFloat(document.getElementById("rate").value)||0;
+    var sale = (sum / (1 + rate)).toFixed(2);
+    var tax = (sale * rate).toFixed(2);
+    var price = (sale / num).toFixed(2);
+    this.setState({
+      sum: sum,
+      num: num,
+      sale: sale,
+      tax: tax,
+      price: price,
+      rate: rate
+    });
+  }
+
+  render() {
+    return React.createElement(
+      "table",
+      { className: "table" },
+      React.createElement(
+        "tr",
+        null,
+        React.createElement(
+          "td",
+          null,
+          "\u5355\u4EF7:"
+        ),
+        React.createElement(
+          "td",
+          null,
+          this.state.price
+        )
+      ),
+      React.createElement(
+        "tr",
+        null,
+        React.createElement(
+          "td",
+          null,
+          "\u4E0D\u542B\u7A0E\u9500\u552E\u989D:"
+        ),
+        React.createElement(
+          "td",
+          null,
+          this.state.sale
+        )
+      ),
+      React.createElement(
+        "tr",
+        null,
+        React.createElement(
+          "td",
+          null,
+          "\u589E\u503C\u7A0E:"
+        ),
+        React.createElement(
+          "td",
+          null,
+          this.state.tax
+        )
+      ),
+      React.createElement(
+        "tr",
+        null,
+        React.createElement(
+          "td",
+          null,
+          "\u7A0E\u7387:"
+        ),
+        React.createElement(
+          "td",
+          null,
+          React.createElement("input", { type: "text", id: "rate", defaultValue: this.state.rate, onChange: this.handleChange.bind(this) })
+        )
+      ),
+      React.createElement(
+        "tr",
+        null,
+        React.createElement(
+          "td",
+          null,
+          "\u6570\u91CF:"
+        ),
+        React.createElement(
+          "td",
+          null,
+          React.createElement("input", { type: "text", id: "num", defaultValue: this.state.num, onChange: this.handleChange.bind(this) })
+        )
+      ),
+      React.createElement(
+        "tr",
+        null,
+        React.createElement(
+          "td",
+          null,
+          "\u542B\u7A0E\u9500\u552E\u989D:"
+        ),
+        React.createElement(
+          "td",
+          null,
+          React.createElement("input", { type: "text", id: "sum", defaultValue: this.state.sum, onChange: this.handleChange.bind(this) })
+        )
+      )
+    );
+  }
+};
+
+ReactDOM.render(React.createElement(TaxCalc, null), document.getElementById('tax-calc'));
+    </script>
+  </body>
+</html>
