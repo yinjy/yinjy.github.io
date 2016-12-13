@@ -17,7 +17,7 @@
     <script src="//cdn.bootcss.com/react/15.4.1/react.min.js"></script>
     <script src="//cdn.bootcss.com/react/15.4.1/react-dom.min.js"></script>
     <script type="text/javascript">
-      class TaxCalc extends React.Component {
+class TaxCalc extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
@@ -31,9 +31,9 @@
   }
 
   handleChange(e) {
-    var sum = parseFloat(document.getElementById("sum").value)||0;
-    var num = parseFloat(document.getElementById("num").value)||0;
-    var rate = parseFloat(document.getElementById("rate").value)||0;
+    var sum = parseFloat(document.getElementById("sum").value) || 0;
+    var num = parseFloat(document.getElementById("num").value) || 0;
+    var rate = parseFloat(document.getElementById("rate").value) || 0;
     var sale = (sum / (1 + rate)).toFixed(2);
     var tax = (sale * rate).toFixed(2);
     var price = (sale / num).toFixed(2);
@@ -49,90 +49,90 @@
 
   render() {
     return React.createElement(
-      "table",
+      'table',
       null,
       React.createElement(
-        "tr",
+        'tr',
         null,
         React.createElement(
-          "td",
+          'td',
           null,
-          "\u5355\u4EF7:"
+          '\u5355\u4EF7:'
         ),
         React.createElement(
-          "td",
+          'td',
           null,
           this.state.price
         )
       ),
       React.createElement(
-        "tr",
+        'tr',
         null,
         React.createElement(
-          "td",
+          'td',
           null,
-          "\u4E0D\u542B\u7A0E\u9500\u552E\u989D:"
+          '\u4E0D\u542B\u7A0E\u9500\u552E\u989D:'
         ),
         React.createElement(
-          "td",
+          'td',
           null,
           this.state.sale
         )
       ),
       React.createElement(
-        "tr",
+        'tr',
         null,
         React.createElement(
-          "td",
+          'td',
           null,
-          "\u589E\u503C\u7A0E:"
+          '\u589E\u503C\u7A0E:'
         ),
         React.createElement(
-          "td",
+          'td',
           null,
           this.state.tax
         )
       ),
       React.createElement(
-        "tr",
+        'tr',
         null,
         React.createElement(
-          "td",
+          'td',
           null,
-          "\u7A0E\u7387:"
+          '\u7A0E\u7387:'
         ),
         React.createElement(
-          "td",
+          'td',
           null,
-          React.createElement("input", { type: "number", id: "rate", defaultValue: this.state.rate, onChange: this.handleChange.bind(this) })
+          React.createElement('input', { type: 'number', id: 'rate', defaultValue: this.state.rate, onChange: this.handleChange.bind(this) })
         )
       ),
       React.createElement(
-        "tr",
+        'tr',
         null,
         React.createElement(
-          "td",
+          'td',
           null,
-          "\u6570\u91CF:"
+          '\u6570\u91CF:'
         ),
         React.createElement(
-          "td",
+          'td',
           null,
-          React.createElement("input", { type: "number", id: "num", defaultValue: this.state.num, onChange: this.handleChange.bind(this) })
+          React.createElement('input', { type: 'number', id: 'num', defaultValue: this.state.num, onChange: this.handleChange.bind(this) })
         )
       ),
       React.createElement(
-        "tr",
+        'tr',
         null,
         React.createElement(
-          "td",
+          'td',
           null,
-          "\u542B\u7A0E\u9500\u552E\u989D:"
+          '\u542B\u7A0E\u9500\u552E\u989D:'
         ),
         React.createElement(
-          "td",
+          'td',
           null,
-          React.createElement("input", { type: "number", autofocus: "autofocus", id: "sum", defaultValue: this.state.sum, onChange: this.handleChange.bind(this) })
+          React.createElement('input', { type: 'number', autofocus: 'autofocus', id: 'sum', defaultValue: this.state.sum, onChange: this.handleChange.bind(this) })
         )
       )
     );
