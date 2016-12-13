@@ -7,6 +7,7 @@
     <style type="text/css">
       html,input {
         font-family: monospace;
+        font-size: 1.5em;
       }
     </style>
   </head>
@@ -102,7 +103,7 @@
         React.createElement(
           "td",
           null,
-          React.createElement("input", { type: "text", id: "rate", defaultValue: this.state.rate, onChange: this.handleChange.bind(this) })
+          React.createElement("input", { type: "number", id: "rate", defaultValue: this.state.rate, onChange: this.handleChange.bind(this) })
         )
       ),
       React.createElement(
@@ -116,7 +117,7 @@
         React.createElement(
           "td",
           null,
-          React.createElement("input", { type: "text", id: "num", defaultValue: this.state.num, onChange: this.handleChange.bind(this) })
+          React.createElement("input", { type: "number", id: "num", defaultValue: this.state.num, onChange: this.handleChange.bind(this) })
         )
       ),
       React.createElement(
@@ -130,7 +131,7 @@
         React.createElement(
           "td",
           null,
-          React.createElement("input", { type: "text", id: "sum", defaultValue: this.state.sum, onChange: this.handleChange.bind(this) })
+          React.createElement("input", { type: "number", id: "sum", defaultValue: this.state.sum, onChange: this.handleChange.bind(this) })
         )
       )
     );
