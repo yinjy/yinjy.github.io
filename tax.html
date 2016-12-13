@@ -12,7 +12,7 @@
     </style>
   </head>
   <body>
-  <h1>增值税计算器</h1>
+  <h3>增值税计算器</h3>
     <div id="tax-calc"></div>
     <script src="//cdn.bootcss.com/react/15.4.1/react.min.js"></script>
     <script src="//cdn.bootcss.com/react/15.4.1/react-dom.min.js"></script>
@@ -132,7 +132,7 @@
         React.createElement(
           "td",
           null,
-          React.createElement("input", { type: "number", id: "sum", defaultValue: this.state.sum, onChange: this.handleChange.bind(this) })
+          React.createElement("input", { type: "number", autofocus: "autofocus", id: "sum", defaultValue: this.state.sum, onChange: this.handleChange.bind(this) })
         )
       )
     );
